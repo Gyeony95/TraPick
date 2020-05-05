@@ -1,24 +1,25 @@
-package com.example.trapick.Main
+package com.example.trapick.Home
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.trapick.Home.Region.RegionActivity
 import com.example.trapick.R
 import java.util.ArrayList
 
-class MainAdapter(val context: Context, val arrayList: ArrayList<MainModel>) :
-    RecyclerView.Adapter<MainAdapter.Holder>() {
+class HomeAdapter(val context: Context, val arrayList: ArrayList<HomeModel>) :
+    RecyclerView.Adapter<HomeAdapter.Holder>() {
 
 
-    fun addItem(item: MainModel) {//아이템 추가
+    fun addItem(item: HomeModel) {//아이템 추가
         if (arrayList != null) {//널체크 해줘야함
             arrayList.add(item)
-
         }
     }
 
@@ -29,7 +30,7 @@ class MainAdapter(val context: Context, val arrayList: ArrayList<MainModel>) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_main, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_home, parent, false)
         return Holder(view)
     }
 
@@ -49,14 +50,14 @@ class MainAdapter(val context: Context, val arrayList: ArrayList<MainModel>) :
 
 
 
-        fun bind(mlist: MainModel, context: Context) {
+        fun bind(mlist: HomeModel, context: Context) {
 
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
             textView.text = mlist.countryName
 
-            //일단 클릭하면 알람의 타입이 무엇인지 토스트로 띄움
             itemView.setOnClickListener {
-                Toast.makeText(context, "" + mlist.countryName, Toast.LENGTH_SHORT).show()
+                val intent = Intent(context, RegionActivity::class.java)
+                context.startActivity(intent)
             }
 
         }
