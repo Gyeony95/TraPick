@@ -1,21 +1,20 @@
-package com.example.trapick.Main
+package com.example.trapick.Home
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trapick.R
 import java.util.ArrayList
 
-class MainAdapter(val context: Context, val arrayList: ArrayList<MainModel>) :
-    RecyclerView.Adapter<MainAdapter.Holder>() {
+class HomeAdapter(val context: Context, val arrayList: ArrayList<HomeModel>) :
+    RecyclerView.Adapter<HomeAdapter.Holder>() {
 
 
-    fun addItem(item: MainModel) {//아이템 추가
+    fun addItem(item: HomeModel) {//아이템 추가
         if (arrayList != null) {//널체크 해줘야함
             arrayList.add(item)
 
@@ -49,7 +48,7 @@ class MainAdapter(val context: Context, val arrayList: ArrayList<MainModel>) :
 
 
 
-        fun bind(mlist: MainModel, context: Context) {
+        fun bind(mlist: HomeModel, context: Context) {
 
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
             textView.text = mlist.countryName
