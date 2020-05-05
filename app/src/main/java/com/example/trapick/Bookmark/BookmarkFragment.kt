@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.trapick.MainActivity
 import com.example.trapick.R
 
 
@@ -16,7 +17,11 @@ class BookmarkFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_bookmark, container, false)
+        val mView = inflater.inflate(R.layout.fragment_bookmark, container, false)
+        (activity as MainActivity?)!!.setActionBarTitle("즐겨찾기")
+
+
+        return mView
     }
 
 

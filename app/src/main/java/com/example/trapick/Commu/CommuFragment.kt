@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.trapick.MainActivity
 import com.example.trapick.R
 
 
@@ -16,7 +17,10 @@ class CommuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_commu, container, false)
+        val mView = inflater.inflate(R.layout.fragment_commu, container, false)
+        (activity as MainActivity?)!!.setActionBarTitle("커뮤니티")
+
+        return mView
     }
 
 

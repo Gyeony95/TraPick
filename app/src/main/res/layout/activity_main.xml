@@ -20,10 +20,10 @@
         android:background="@color/white"
         app:itemBackground="@color/white"
         app:itemIconSize="24dp"
-        app:itemIconTint="@color/gray"
+        app:itemIconTint="@drawable/bottom_nav_item_color"
         app:itemTextAppearanceActive="@style/BottomNavigationView.TextAppearance.Active"
         app:itemTextAppearanceInactive="@style/BottomNavigationView.TextAppearance.InActive"
-        app:itemTextColor="@color/gray"
+        app:itemTextColor="@drawable/bottom_nav_item_color"
         app:menu="@menu/bottom_nav_item"/>
 
 
