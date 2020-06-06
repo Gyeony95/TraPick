@@ -6,12 +6,14 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.trapick.Bookmark.BookmarkFragment
-import com.example.trapick.Commu.CommuFragment
-import com.example.trapick.Home.HomeFragment
-import com.example.trapick.Map.MapFragment
+import com.example.trapick.Util.setupTimber
+import com.example.trapick.View.Bookmark.BookmarkFragment
+import com.example.trapick.View.Commu.CommuFragment
+import com.example.trapick.View.Home.HomeFragment
+import com.example.trapick.View.Map.MapFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        this.setupTimber()
 
         showFragment(HomeFragment(this))
         bottomNavigationView.setOnNavigationItemSelectedListener(this)

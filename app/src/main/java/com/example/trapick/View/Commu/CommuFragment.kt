@@ -1,4 +1,4 @@
-package com.example.trapick.Map
+package com.example.trapick.View.Commu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.trapick.MainActivity
 import com.example.trapick.R
-import com.google.android.gms.maps.MapView
-import kotlinx.android.synthetic.main.fragment_map.view.*
 
 
-class MapFragment : Fragment() {
+class CommuFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
 
@@ -19,9 +17,8 @@ class MapFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val mView = inflater.inflate(R.layout.fragment_map, container, false)
-        (activity as MainActivity?)!!.setActionBarTitle("지도")
-
+        val mView = inflater.inflate(R.layout.fragment_commu, container, false)
+        (activity as MainActivity?)!!.setActionBarTitle("커뮤니티")
 
         return mView
     }

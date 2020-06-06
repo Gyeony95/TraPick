@@ -1,23 +1,19 @@
-package com.example.trapick.Home
+package com.example.trapick.View.Home.Region
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.trapick.Home.Region.RegionActivity
 import com.example.trapick.R
 import java.util.ArrayList
 
-class HomeAdapter(val context: Context, val arrayList: ArrayList<HomeModel>) :
-    RecyclerView.Adapter<HomeAdapter.Holder>() {
+class RegionAdapter(val context: Context, val arrayList: ArrayList<RegionModel>) :
+    RecyclerView.Adapter<RegionAdapter.Holder>() {
 
 
-    fun addItem(item: HomeModel) {//아이템 추가
+    fun addItem(item: RegionModel) {//아이템 추가
         if (arrayList != null) {//널체크 해줘야함
             arrayList.add(item)
         }
@@ -30,7 +26,7 @@ class HomeAdapter(val context: Context, val arrayList: ArrayList<HomeModel>) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_home, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_region, parent, false)
         return Holder(view)
     }
 
@@ -46,18 +42,19 @@ class HomeAdapter(val context: Context, val arrayList: ArrayList<HomeModel>) :
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         //모델의 변수들 정의하는부분
-        val textView = itemView.findViewById<TextView>(R.id.textView2)
+        val region_count_tv = itemView.findViewById<TextView>(R.id.region_count_tv)
+        val region_name_tv = itemView.findViewById<TextView>(R.id.region_name_tv)
 
 
 
-        fun bind(mlist: HomeModel, context: Context) {
+        fun bind(mlist: RegionModel, context: Context) {
 
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
-            textView.text = mlist.countryName
+            region_count_tv.text = mlist.count
+            region_name_tv.text = mlist.name
 
             itemView.setOnClickListener {
-                val intent = Intent(context, RegionActivity::class.java)
-                context.startActivity(intent)
+
             }
 
         }

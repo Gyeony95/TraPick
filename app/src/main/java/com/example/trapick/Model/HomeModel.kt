@@ -1,4 +1,4 @@
-package com.example.trapick.Home
+package com.example.trapick.Model
 /*
 * countryName : 국가명
 * */

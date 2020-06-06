@@ -1,22 +1,24 @@
-package com.example.trapick.Home.Region
+package com.example.trapick.View.Home
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.trapick.Home.HomeAdapter
-import com.example.trapick.Home.HomeModel
+import com.example.trapick.Model.HomeModel
+import com.example.trapick.View.Home.Region.RegionActivity
 import com.example.trapick.R
 import java.util.ArrayList
 
-class RegionAdapter(val context: Context, val arrayList: ArrayList<RegionModel>) :
-    RecyclerView.Adapter<RegionAdapter.Holder>() {
+class HomeAdapter() :
+    RecyclerView.Adapter<HomeAdapter.Holder>() {
 
+    var arrayList: MutableList<HomeModel> = ArrayList()
+    lateinit var context: Context
 
-    fun addItem(item: RegionModel) {//아이템 추가
+    fun addItem(item: HomeModel) {//아이템 추가
         if (arrayList != null) {//널체크 해줘야함
             arrayList.add(item)
         }
@@ -27,9 +29,13 @@ class RegionAdapter(val context: Context, val arrayList: ArrayList<RegionModel>)
         notifyItemRemoved(position)
     }
 
+    fun RecyclerAdapter(mList: MutableList<HomeModel>, context: Context) {
+        this.arrayList = mList
+        this.context = context
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_region, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_home, parent, false)
         return Holder(view)
     }
 
@@ -45,22 +51,23 @@ class RegionAdapter(val context: Context, val arrayList: ArrayList<RegionModel>)
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         //모델의 변수들 정의하는부분
-        val region_count_tv = itemView.findViewById<TextView>(R.id.region_count_tv)
-        val region_name_tv = itemView.findViewById<TextView>(R.id.region_name_tv)
-
-
-
-        fun bind(mlist: RegionModel, context: Context) {
+        val textView = itemView.findViewById<TextView>(R.id.textView2)
+        fun bind(mlist: HomeModel, context: Context) {
 
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
-            region_count_tv.text = mlist.count
-            region_name_tv.text = mlist.name
+            textView.text = mlist.countryName
 
             itemView.setOnClickListener {
-
+                val intent = Intent(context, RegionActivity::class.java)
+                context.startActivity(intent)
             }
 
         }
+    }
+
+    fun updateList(datalist: MutableList<HomeModel>){
+        this.arrayList = datalist
+        notifyDataSetChanged()
     }
 
 }
