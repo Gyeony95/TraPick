@@ -15,21 +15,14 @@ import java.util.ArrayList
 class HomeAdapter() :
     RecyclerView.Adapter<HomeAdapter.Holder>() {
 
-    var arrayList: MutableList<HomeModel> = ArrayList()
+    var arrayList: ArrayList<HomeModel.HomeModelNode> = ArrayList()
     lateinit var context: Context
 
-    fun addItem(item: HomeModel) {//아이템 추가
-        if (arrayList != null) {//널체크 해줘야함
-            arrayList.add(item)
-        }
+    fun addItem(item: HomeModel.HomeModelNode){
+        arrayList.add(item)
     }
 
-    fun removeAt(position: Int) {
-        arrayList.removeAt(position)
-        notifyItemRemoved(position)
-    }
-
-    fun RecyclerAdapter(mList: MutableList<HomeModel>, context: Context) {
+    fun RecyclerAdapter(mList: ArrayList<HomeModel.HomeModelNode>, context: Context) {
         this.arrayList = mList
         this.context = context
     }
@@ -52,7 +45,7 @@ class HomeAdapter() :
 
         //모델의 변수들 정의하는부분
         val textView = itemView.findViewById<TextView>(R.id.textView2)
-        fun bind(mlist: HomeModel, context: Context) {
+        fun bind(mlist: HomeModel.HomeModelNode, context: Context) {
 
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
             textView.text = mlist.countryName
@@ -65,7 +58,7 @@ class HomeAdapter() :
         }
     }
 
-    fun updateList(datalist: MutableList<HomeModel>){
+    fun updateList(datalist: ArrayList<HomeModel.HomeModelNode>){
         this.arrayList = datalist
         notifyDataSetChanged()
     }

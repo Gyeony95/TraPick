@@ -2,24 +2,17 @@ package com.example.trapick.View.Home
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trapick.Base.BaseFragment
 import com.example.trapick.MainActivity
-import com.example.trapick.Model.HomeModel
 import com.example.trapick.R
 import com.example.trapick.ViewModel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import androidx.lifecycle.Observer
-import com.example.trapick.Util.makeToast
-import com.example.trapick.Util.setupTimber
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_home.view.imageView
 import timber.log.Timber
 
 
@@ -37,14 +30,7 @@ class HomeFragment(mContext: Context) : BaseFragment() {
         val mView = inflater.inflate(R.layout.fragment_home, container, false)
         initStartView(mView)
         initViewModel()
-        initAfterBinding()
-
-
-
-        mView.imageView.setOnClickListener(){
-            this.makeToast(mAdapter.itemCount.toString())
-        }
-
+        initAfterBinding(mView)
         return mView
     }
 
@@ -61,17 +47,16 @@ class HomeFragment(mContext: Context) : BaseFragment() {
     override fun initViewModel(){
         viewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        viewModel.getDatas().observe(viewLifecycleOwner, Observer { pokemonList ->
-            pokemonList?.let{
-                //mAdapter.arrayList = pokemonList
-                //mAdapter.notifyDataSetChanged()
-                Log.e("asd", it[0].countryName)
-                mAdapter.updateList(it)
+        viewModel.responseLiveData.observe(viewLifecycleOwner, Observer {
+            it.doucuments.forEach{node->
+                mAdapter.addItem(node)
             }
+            mAdapter.notifyDataSetChanged()
         })
-    }
-    override fun initAfterBinding() {
+        viewModel.getDatas()
 
+    }
+    override fun initAfterBinding(view: View) {
     }
 
 

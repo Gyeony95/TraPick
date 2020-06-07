@@ -11,7 +11,7 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun initStartView(view: View)
 
-    abstract fun initAfterBinding()
+    abstract fun initAfterBinding(view: View)
 
 
 }

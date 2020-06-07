@@ -1,31 +1,32 @@
 package com.example.trapick.ViewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.trapick.Base.BaseViewModel
 import com.example.trapick.Model.HomeModel
-import com.example.trapick.Repository.HomeRepositoryImpl
-import com.example.trapick.Util.SingleLiveEvent
-import timber.log.Timber
+
 
 class HomeViewModel : BaseViewModel() {
 
-    private var _sendEvent = SingleLiveEvent<MutableList<HomeModel>>()
-    private var datas: MutableLiveData<MutableList<HomeModel>>
-        get() = _sendEvent
-    var repository: HomeRepositoryImpl = HomeRepositoryImpl()
+    private val _responseLiveData = MutableLiveData<HomeModel>()
+    val responseLiveData:LiveData<HomeModel>
+        get() = _responseLiveData
 
-    init {
-        datas = repository.getDataFromApi()
+
+    fun getDatas(){
+
+        val aaa : ArrayList<HomeModel.HomeModelNode> = ArrayList()
+        aaa.add(HomeModel.HomeModelNode("중국"))
+        aaa.add(HomeModel.HomeModelNode("일본"))
+        aaa.add(HomeModel.HomeModelNode("러시아"))
+        aaa.add(HomeModel.HomeModelNode("인도"))
+        aaa.add(HomeModel.HomeModelNode("브라질"))
+        val dd = HomeModel(aaa)
+        _responseLiveData.postValue(dd)
     }
-
-    fun getDatas(): LiveData<MutableList<HomeModel>> {
+/*
+    fun getDatas(): LiveData<List<HomeModel>> {
         return datas
     }
-
-    private fun loadDatas() {
-        // Do an asynchronous operation to fetch users.
-    }
+*/
 }
