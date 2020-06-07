@@ -13,5 +13,4 @@ abstract class BaseFragment : Fragment() {
 
     abstract fun initAfterBinding(view: View)
 
-
 }

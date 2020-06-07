@@ -1,4 +1,4 @@
-package com.example.trapick.ViewModel
+package com.example.trapick.View.Home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

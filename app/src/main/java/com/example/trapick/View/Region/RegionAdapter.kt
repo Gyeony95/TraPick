@@ -1,36 +1,40 @@
-package com.example.trapick.View.Home
+package com.example.trapick.View.Region
 
-import android.app.Activity
+import android.app.PendingIntent.getActivity
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trapick.MainActivity
-import com.example.trapick.Model.HomeModel
+import com.example.trapick.Model.RegionModel
 import com.example.trapick.R
-import com.example.trapick.View.Region.RegionFragment
-import java.util.ArrayList
+import org.xmlpull.v1.XmlPullParserFactory.newInstance
+import java.lang.reflect.Array.newInstance
+import java.util.*
+import javax.xml.xpath.XPathFactory.newInstance
 
-class HomeAdapter(mActivity: MainActivity) :
-    RecyclerView.Adapter<HomeAdapter.Holder>() {
 
-    var arrayList: ArrayList<HomeModel.HomeModelNode> = ArrayList()
+class RegionAdapter:
+    RecyclerView.Adapter<RegionAdapter.Holder>() {
+
+
+    var arrayList: ArrayList<RegionModel.RegionModelNode> = ArrayList()
     lateinit var context: Context
-    var mActivity = mActivity
-    fun addItem(item: HomeModel.HomeModelNode){
+
+    fun addItem(item: RegionModel.RegionModelNode){
         arrayList.add(item)
     }
 
-    fun RecyclerAdapter(mList: ArrayList<HomeModel.HomeModelNode>, context: Context) {
+    fun RecyclerAdapter(mList: ArrayList<RegionModel.RegionModelNode>, context: Context) {
         this.arrayList = mList
         this.context = context
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_home, parent, false)
+        var view = LayoutInflater.from(context).inflate(R.layout.item_region, parent, false)
+
         return Holder(view)
     }
 
@@ -47,17 +51,16 @@ class HomeAdapter(mActivity: MainActivity) :
 
         //모델의 변수들 정의하는부분
         val tvCountryName = itemView.findViewById<TextView>(R.id.tv_country_name)
-        fun bind(mlist: HomeModel.HomeModelNode, context: Context) {
+        fun bind(mlist: RegionModel.RegionModelNode, context: Context) {
 
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
             tvCountryName.text = mlist.countryName
 
             itemView.setOnClickListener {
-                mActivity.showFragment(RegionFragment(mActivity))
+                //val intent = Intent(context, RegionActivity::class.java)
+                //context.startActivity(intent)
             }
 
         }
     }
-
-
 }
