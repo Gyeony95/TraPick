@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:bind="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="ㅇㅇ님, 어떤\n선택관광을 원하시나요?"
+            android:textSize="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -16,9 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_weight="2"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/main_image" />
 
-        <LinearLayout
+        <!--LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -54,7 +65,7 @@
                 android:layout_marginBottom="15dp"
                 android:text="2020.04.01"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-        </LinearLayout>
+        </LinearLayout-->
 
         <TextView
             android:id="@+id/textView5"

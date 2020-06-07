@@ -21,6 +21,11 @@ class HomeViewModel : BaseViewModel() {
         aaa.add(HomeModel.HomeModelNode("러시아"))
         aaa.add(HomeModel.HomeModelNode("인도"))
         aaa.add(HomeModel.HomeModelNode("브라질"))
+        aaa.add(HomeModel.HomeModelNode("중국"))
+        aaa.add(HomeModel.HomeModelNode("일본"))
+        aaa.add(HomeModel.HomeModelNode("러시아"))
+        aaa.add(HomeModel.HomeModelNode("인도"))
+        aaa.add(HomeModel.HomeModelNode("브라질"))
         val dd = HomeModel(aaa)
         _responseLiveData.postValue(dd)
     }

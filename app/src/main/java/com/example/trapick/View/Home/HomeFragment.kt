@@ -26,7 +26,7 @@ class HomeFragment(mContext: Context) : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as MainActivity?)!!.setActionBarTitle("00님 어서오세요")
+        (activity as MainActivity?)!!.setActionBarTitle("TRAPICK")
         val mView = inflater.inflate(R.layout.fragment_home, container, false)
         initStartView(mView)
         initViewModel()

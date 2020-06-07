@@ -44,11 +44,11 @@ class HomeAdapter() :
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         //모델의 변수들 정의하는부분
-        val textView = itemView.findViewById<TextView>(R.id.textView2)
+        val tvCountryName = itemView.findViewById<TextView>(R.id.tv_country_name)
         fun bind(mlist: HomeModel.HomeModelNode, context: Context) {
 
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
-            textView.text = mlist.countryName
+            tvCountryName.text = mlist.countryName
 
             itemView.setOnClickListener {
                 val intent = Intent(context, RegionActivity::class.java)
