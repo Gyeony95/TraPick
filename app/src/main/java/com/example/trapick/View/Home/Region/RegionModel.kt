@@ -1,4 +1,4 @@
-package com.example.trapick.Home.Region
+package com.example.trapick.View.Home.Region
 
 class RegionModel(
     var name:String,

@@ -1,15 +1,12 @@
-package com.example.trapick.Home.Region
+package com.example.trapick.View.Home.Region
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.trapick.Home.HomeAdapter
-import com.example.trapick.Home.HomeModel
 import com.example.trapick.R
 import kotlinx.android.synthetic.main.activity_region.*
-import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class RegionActivity : AppCompatActivity() {
     var arrayList = arrayListOf<RegionModel>(
