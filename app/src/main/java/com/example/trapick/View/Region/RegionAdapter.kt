@@ -10,18 +10,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.trapick.MainActivity
 import com.example.trapick.Model.RegionModel
 import com.example.trapick.R
+import com.example.trapick.View.Country.CountryFragment
 import org.xmlpull.v1.XmlPullParserFactory.newInstance
 import java.lang.reflect.Array.newInstance
 import java.util.*
 import javax.xml.xpath.XPathFactory.newInstance
 
 
-class RegionAdapter:
+class RegionAdapter(mActivity: MainActivity):
     RecyclerView.Adapter<RegionAdapter.Holder>() {
 
 
     var arrayList: ArrayList<RegionModel.RegionModelNode> = ArrayList()
     lateinit var context: Context
+    var mActivity = mActivity
 
     fun addItem(item: RegionModel.RegionModelNode){
         arrayList.add(item)
@@ -57,8 +59,8 @@ class RegionAdapter:
             tvCountryName.text = mlist.countryName
 
             itemView.setOnClickListener {
-                //val intent = Intent(context, RegionActivity::class.java)
-                //context.startActivity(intent)
+                mActivity.showFragment(CountryFragment(mActivity))
+
             }
 
         }

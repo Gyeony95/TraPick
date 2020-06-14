@@ -20,10 +20,10 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_region.view.*
 
 
-class RegionFragment(mActivity:Activity) : BaseFragment() {
+class RegionFragment(mActivity:MainActivity) : BaseFragment() {
 
     var viewModel = RegionViewModel()
-    val mAdapter = RegionAdapter()
+    val mAdapter = RegionAdapter(mActivity)
     var mActivity = mActivity
 
     override fun onCreateView(
