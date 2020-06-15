@@ -14,7 +14,6 @@ class HomeViewModel : BaseViewModel() {
 
 
     fun getDatas(){
-
         val aaa : ArrayList<HomeModel.HomeModelNode> = ArrayList()
         aaa.add(HomeModel.HomeModelNode("중국"))
         aaa.add(HomeModel.HomeModelNode("일본"))
@@ -29,9 +28,5 @@ class HomeViewModel : BaseViewModel() {
         val dd = HomeModel(aaa)
         _responseLiveData.postValue(dd)
     }
-/*
-    fun getDatas(): LiveData<List<HomeModel>> {
-        return datas
-    }
-*/
+
 }

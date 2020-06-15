@@ -1,36 +1,62 @@
 package com.example.trapick.View.Country
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.ActionBar
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.trapick.Base.BaseFragment
 import com.example.trapick.MainActivity
 import com.example.trapick.R
+import com.example.trapick.View.Home.HomeViewModel
+import kotlinx.android.synthetic.main.fragment_country.*
+import kotlinx.android.synthetic.main.fragment_country.view.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import timber.log.Timber
 
 class CountryFragment(mActivity: MainActivity) : BaseFragment() {
+
+    var mActivity:MainActivity = mActivity
+    var mAdapter = CountryAdapter(mActivity)
+    var viewModel = CountryViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as MainActivity?)!!.setActionBarTitle("TRAPICK")
+        (activity as MainActivity?)!!.setActionBarTitle("asdsa")
         val mView = inflater.inflate(R.layout.fragment_country, container, false)
-
-
         setHasOptionsMenu(true)//메뉴 가질수 있게 허용
-
         initStartView(mView)
         initViewModel()
         initAfterBinding(mView)
         return mView
     }
     override fun initViewModel() {
-
+        viewModel =
+            ViewModelProviders.of(this).get(CountryViewModel::class.java)
+        viewModel.responseLiveData.observe(viewLifecycleOwner, Observer {
+            it.doucuments.forEach{node->
+                mAdapter.addItem(node)
+            }
+            mAdapter.notifyDataSetChanged()
+        })
+        viewModel.getDatas()
     }
 
     override fun initStartView(view: View) {
+        mAdapter.RecyclerAdapter(arrayListOf(),requireContext())
+        view.rv_country.apply {
+            this.adapter = mAdapter
+            this.layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.HORIZONTAL, false)
+            this.setHasFixedSize(true)
+        }
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(view.rv_country)
     }
 
     override fun initAfterBinding(view: View) {
