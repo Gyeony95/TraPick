@@ -58,4 +58,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rxjava2_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid2_version"
 
+    //AWS lambda
+    implementation 'com.amazonaws:aws-android-sdk-core:2.2.+'
+    implementation 'com.amazonaws:aws-android-sdk-lambda:2.2.+'
 }
