@@ -61,4 +61,8 @@ dependencies {
     //AWS lambda
     implementation 'com.amazonaws:aws-android-sdk-core:2.2.+'
     implementation 'com.amazonaws:aws-android-sdk-lambda:2.2.+'
+
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
 }

@@ -6,6 +6,7 @@ data class BookmarkModel(
 ){
     data class BookmarkModelNode(
         var bookmarkTitle:String,
+        var bookmarkScript:String,
         var bookmarkCountry:String,
         var bookmarkImage:String,
         var bookmarkPrice:String
