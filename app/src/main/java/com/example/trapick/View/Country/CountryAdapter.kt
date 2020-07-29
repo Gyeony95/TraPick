@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.trapick.MainActivity
 import com.example.trapick.Model.CountryModel
 import com.example.trapick.Model.HomeModel
@@ -54,7 +55,9 @@ class CountryAdapter(mActivity: MainActivity) :
         val tvItemScript = itemView.findViewById<TextView>(R.id.tv_item_script)
         val ibItemArrow = itemView.findViewById<ImageButton>(R.id.ib_item_arrow)
         fun bind(mlist: CountryModel.CountryModelNode, context: Context) {
-
+            if(!mlist.itemImage.equals("")){//비어있지 않다면
+                Glide.with(context).load(mlist.itemImage).into(ivItemImage);
+            }
             //상대이름, 피드백제목, 피드백 작성일 등 정의해줌
             tvItemScript.text = mlist.itemScript
 

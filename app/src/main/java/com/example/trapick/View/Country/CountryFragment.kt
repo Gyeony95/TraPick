@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
+import com.bumptech.glide.Glide
 import com.example.trapick.Base.BaseFragment
 import com.example.trapick.MainActivity
 import com.example.trapick.R
@@ -28,9 +29,11 @@ class CountryFragment(mActivity: MainActivity) : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as MainActivity?)!!.setActionBarTitle("asdsa")
+        (activity as MainActivity?)!!.setActionBarTitle("관광 선택")
         val mView = inflater.inflate(R.layout.fragment_country, container, false)
         setHasOptionsMenu(true)//메뉴 가질수 있게 허용
+
+        Glide.with(context).load("https://travelpost.kr/wp-content/uploads/2015/12/venice.jpg").into(mView.iv_country_image)
         initStartView(mView)
         initViewModel()
         initAfterBinding(mView)

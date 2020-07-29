@@ -45,10 +45,8 @@ dependencies {
     implementation 'com.tbuonomo:morph-bottom-navigation:1.0.1'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
-
     // Timber
     implementation "com.jakewharton.timber:timber:$timber"
-
 
     //LifeCycle
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -66,9 +64,12 @@ dependencies {
     //cognito
     implementation "com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.16.6"
 
-
     //circle image
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-    compileOnly 'com.google.android.wearable:wearable:2.5.0'
+
+    //piccaso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
 
 }

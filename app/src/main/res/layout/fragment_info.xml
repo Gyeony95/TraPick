@@ -10,12 +10,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <ImageView
             android:id="@+id/iv_info_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,13 +73,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ" />
+                android:text="카파도키아의 동화 속과 같은 버섯 바위와 바위로 만든 집들 위를 1시간짜리 열기구 비행으로 날아보고, 공중에서 특별한 지형을 내려다볼 수 있는 특권을 누려보세요. 계곡 위로 일출을 감상해보시고, 안전한 착륙 후 샴페인으로 건배해보세요." />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ" />
+                android:text="600만년 동안 진행된 화산 폭발 그리고 비와 바람.
+
+모두 자연히 빚어낸 예술작품 카파도키아입니다. 외계행성과 같은 모습을 지닌 카파도키아는 누구도 사진을 찍지 않을 수 없습니다. 그런 카파도키아의 가장 아름다운 모습을 보는 방법은 바로 벌룬 투어입니다! 카파도키아의 아름다운 일출과 그 일출을 보기 위해 모여든 벌룬들이 만들어낸 장관을 사진과 마음으로 남겨 보세요!
+터키 중부지방에 있는 카파도키아(Cappadocia). 여행을 좋아하는 사람이라면 한 번쯤 들어봤을 법한 이름이다. 열기구 투어로 유명한 곳이기 때문이다. 또한, 영화 ‘스타워즈’의 배경이 된 곳이기도 하다. 열기구를 타고 올라가면 자연이 빚은 카파도키아의 기이하고 신비한 지형을 한눈에 볼 수 있다. 그리고 열기구 투어는 일출 시간대에만 운영하기 때문에 일출과 함께 멋있는 풍경을 볼 수 있다. 그럼 지금부터 열기구와 함께 카파도키아의 매력에 빠져보자." />
 
         </LinearLayout>
 
@@ -160,7 +164,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="기상상황에 따라 변화가 생길 수 있음" />
+                    android:text="기상상황에 따라 변화가 생길 수 있음"
+                    android:layout_marginBottom="100dp"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

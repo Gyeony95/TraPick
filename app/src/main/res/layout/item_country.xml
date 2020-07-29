@@ -11,7 +11,7 @@
     <com.example.trapick.Util.RoundImageView
         android:id="@+id/iv_item_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:src="@drawable/egypt_rs"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
