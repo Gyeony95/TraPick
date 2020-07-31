@@ -38,10 +38,8 @@ class RegionFragment(mActivity:MainActivity) : BaseFragment() {
         return mView
     }
 
-
     override fun initViewModel() {
-        viewModel =
-            ViewModelProviders.of(this).get(RegionViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(RegionViewModel::class.java)
         viewModel.responseLiveData.observe(viewLifecycleOwner, Observer {
             it.doucuments.forEach{node->
                 mAdapter.addItem(node)

@@ -2,9 +2,18 @@ package com.example.trapick.View.Country
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.avon.remindfeedback.Network.RetrofitFactory
 import com.example.trapick.Base.BaseViewModel
 import com.example.trapick.Model.CountryModel
 import com.example.trapick.Model.HomeModel
+import com.google.gson.Gson
+import okhttp3.OkHttpClient
+import org.json.JSONArray
+import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import timber.log.Timber
 
 class CountryViewModel : BaseViewModel() {
 
@@ -28,5 +37,31 @@ class CountryViewModel : BaseViewModel() {
         val dd = CountryModel(aaa)
         _responseLiveData.postValue(dd)
     }
+/*
+    fun getExchange(): JSONObject{
+        val client: OkHttpClient = RetrofitFactory.getClient()
+        val apiService = RetrofitFactory.serviceAPI(client)
+        lateinit var returnData : JSONObject
 
+        val register_request: Call<Object> = apiService.getExchange()
+        register_request.enqueue(object : Callback<Object> {
+
+            override fun onResponse(call: Call<Object>, response: Response<Object>) {
+                if (response.isSuccessful) {
+                    var jArray: JSONArray = JSONArray(Gson().toJson(response.body()))
+                    Timber.e(jArray.getJSONObject(0).getString("timestamp"))
+
+                } else {
+
+                }
+            }
+
+            override fun onFailure(call: Call<Object>, t: Throwable) {
+
+            }
+
+        })
+    }
+
+ */
 }

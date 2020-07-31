@@ -57,6 +57,7 @@ class HomeFragment(mActivity: MainActivity) : BaseFragment() {
 
     }
     override fun initAfterBinding(view: View) {
+
     }
 
 

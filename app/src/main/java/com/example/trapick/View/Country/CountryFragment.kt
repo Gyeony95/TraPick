@@ -60,6 +60,8 @@ class CountryFragment(mActivity: MainActivity) : BaseFragment() {
         }
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(view.rv_country)
+
+
     }
 
     override fun initAfterBinding(view: View) {
