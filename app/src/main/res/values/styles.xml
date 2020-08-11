@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/gray</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--item name="windowActionBar">false</item-->
     </style>
 
     <style name="BottomNavigationView.TextAppearance.Active" parent="@style/TextAppearance.AppCompat.Medium">
@@ -16,4 +17,5 @@
     <style name="BottomNavigationView.TextAppearance.InActive" parent="@android:style/TextAppearance">
         <item name="android:textSize">14sp</item>
     </style>
+
 </resources>

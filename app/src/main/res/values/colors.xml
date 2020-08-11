@@ -6,5 +6,16 @@
     <color name="white">#ffffff</color>
     <color name="gray">#f0f0f0</color>
     <color name="darkgray">#707070</color>
+    <color name="blue">#0000FF</color>
+
+
+    <!--커스텀 툴바
+투명도 설정 android:background 뒤에 헥사코드 앞 두자리 바꿔주기
+100% - FF, 95% - F2, 90% - E6, 85% - D9, 80% - CC,
+75% - BF, 70% - B3, 65% - A6, 60% - 99, 55% - 8C,
+50% - 80, 45% - 73, 40% - 66, 35% - 59, 30% - 4D,
+25% - 40, 20% - 33, 15% - 26, 10% - 1A, 5% - 0D, 0% - 00
+-->
+    <color name="toolbarColor">#00000000</color>
 
 </resources>
